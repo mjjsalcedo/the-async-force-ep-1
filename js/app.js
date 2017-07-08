@@ -21,3 +21,24 @@ bReq.addEventListener("load", breqListener);
 bReq.open("GET", "http://swapi.co/api/planets/1/");
 bReq.send();
 
+var cReq = new XMLHttpRequest();
+
+function creqListener(){
+  var data = JSON.parse(this.responseText);
+  person14Name.innerHTML = data.name;
+}
+
+cReq.addEventListener("load", creqListener);
+cReq.open("GET", "http://swapi.co/api/people/14/");
+cReq.send();
+
+var dReq = new XMLHttpRequest();
+
+function dreqListener(){
+  var data = JSON.parse(this.responseText);
+  person14Species.innerHTML = data.name;
+}
+
+dReq.addEventListener("load", dreqListener);
+dReq.open("GET", "http://swapi.co/api/planets/22/");
+dReq.send();
