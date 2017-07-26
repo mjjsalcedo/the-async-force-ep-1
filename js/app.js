@@ -56,10 +56,3 @@ fetch('http://swapi.co/api/films/')
     }
   });
 });
-    /*var planetLi = document.createElement("li");
-    var planetH6 = document.createElement("h6");
-    var planetParse = JSON.parse(this.response);
-        planetLi.innerHTML = planetParse.name;
-        planetH6.appendChild(planetLi);
-        titleLi.appendChild(planetH6);*/
-
