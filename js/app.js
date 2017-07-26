@@ -36,16 +36,15 @@ fetch('http://swapi.co/api/films/')
 .then(function(response) {
   return response.json();
 }).then(function(myBlob){
-  console.log('myblob',myBlob);
   myBlob.results.map((c,i) => {
   var titleLi = document.createElement("li");
   var titleh2 = document.createElement("h2");
       titleLi.innerHTML = myBlob.results[i].title;
       titleh2.appendChild(titleLi);
       document.getElementById("filmList").appendChild(titleh2);
-    for (var j = 0; j < c.planets.length; j++){
-      console.log('c',c.planets[j]);
-          return fetch(c.planets[j]).then(function(res){
+  var planets = myBlob.results[i].planets;
+    for (var j = 0; j < planets.length; j++){
+          fetch(planets[j]).then(function(res){
             return res.json();
           }).then(function(res){
             var planetLi = document.createElement("li");
